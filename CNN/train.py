@@ -6,20 +6,20 @@ from tensorflow.keras import layers, models
 import matplotlib.pyplot as plt
 # 
 
-animals=np.load("animals.npy")
+tumour=np.load("tumour.npy")
 labels=np.load("labels.npy")
 
-s=np.arange(animals.shape[0])
+s=np.arange(tumour.shape[0])
 np.random.shuffle(s)
-animals=animals[s]
+tumour=tumour[s]
 labels=labels[s]
 
 # 
 num_classes=len(np.unique(labels))
-data_length=len(animals)
+data_length=len(tumour)
 
 # 
-(x_train,x_test)=animals[(int)(0.1*data_length):],animals[:(int)(0.1*data_length)]
+(x_train,x_test)=tumour[(int)(0.1*data_length):],tumour[:(int)(0.1*data_length)]
 x_train = x_train.astype('float32')/255
 x_test = x_test.astype('float32')/255
 train_length=len(x_train)

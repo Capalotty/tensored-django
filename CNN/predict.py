@@ -5,7 +5,7 @@ import numpy as np
 
 import tensorflow as tf
 
-imag=cv2.imread(os.getcwd() +'/CNN/data/parrot/image.jpeg')
+imag=cv2.imread(os.getcwd() +'/CNN/data/benign/benign (1).png')
 img_from_ar = Image.fromarray(imag, 'RGB')
 resized_image = img_from_ar.resize((50, 50))
 

@@ -41,27 +41,18 @@ def index(request):
         result = model.predict(test_image) 
         # ----------------
         # LABELS
-        # Cat 0
-        # Dog 1
-        # Monkey 2
-        # Parrot 3
-        # Elephant 4
-        # Bear 5
+        # benign 0
+        # malignant 1
+        # normal 2
         # ----------------
         print("Prediction: " + str(np.argmax(result)))
 
         if (np.argmax(result) == 0):
-            prediction = "Cat"
+            prediction = "Benign"
         elif (np.argmax(result) == 1):
-            prediction = "Dog"
+            prediction = "Malignant"
         elif (np.argmax(result) == 2):
-            prediction = "Monkey"
-        elif (np.argmax(result) == 3):
-            prediction = "Parrot"
-        elif (np.argmax(result) == 4):
-            prediction = "Elephant"
-        elif (np.argmax(result) == 5):
-            prediction = "Bear"
+            prediction = "Normal"
         else:
             prediction = "Unknown"
         
